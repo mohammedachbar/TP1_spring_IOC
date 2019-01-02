@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="auteur1" class="com.formation.spring.Auteur">
+	<constructor-arg index="0">
+		<value>Gary</value>
+	</constructor-arg>
+	<constructor-arg index="1">
+		<value>Mak</value>
+	</constructor-arg>
+</bean>
+<bean id="cd1" class="com.formation.spring.Cd">
+	<property name="duree">
+		<value>120</value>
+	</property>
+</bean>
+<bean id="livre1" class="com.formation.spring.Livre">
+	<constructor-arg index="0">
+		<value>Spring par l’exemple</value>
+	</constructor-arg>
+	<constructor-arg index="1">
+		<ref bean="auteur1" />
+	</constructor-arg>
+</bean>
+
+<bean id="adherent1" singleton="false" class="com.formation.spring.Adherent"
+init-method="init">
+	<property name="codeAdherent">
+		<value>C100</value>
+	</property>
+	<property name="nom">
+		<value>Mohammed</value>
+	</property>
+	<property name="prenom">
+		<value>Ali</value>
+	</property>
+	<property name="adresse">
+		<value>Rabat</value>
+	</property>
+	<property name="media">
+		<ref bean="livre1" />
+		<!-- ou <ref bean="cd1" /> -->
+	</property>
+</bean>
+</beans>
