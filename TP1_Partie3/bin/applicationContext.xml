@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="adherent1" class="com.formation.spring.Adherent" init-method="init">
+<property name="codeAdherent">
+<value>C100</value>
+</property>
+<property name="nom">
+<value>Mohammed</value>
+</property>
+<property name="prenom">
+<value>Ali</value>
+</property>
+<property name="adresse">
+<value>Rabat</value>
+</property>
+</bean>
+<bean id="adherent2" class="com.formation.spring.Adherent" init-method="init">
+<property name="codeAdherent">
+<value>C200</value>
+</property>
+<property name="nom">
+<value>Hari</value>
+</property>
+<property name="prenom">
+<value>Badr</value>
+</property>
+<property name="adresse">
+<value>Casablanca</value>
+</property>
+</bean>
+<bean id="responsable1" class="com.formation.spring.ResponsableRayon"
+init-method="init">
+<property name="nom">
+<value>Jean</value>
+</property>
+<property name="grade">
+<value>A</value>
+</property>
+<property name="rayon">
+<value>Rayon 1</value>
+</property>
+</bean>
+<bean id="responsable2" class="com.formation.spring.ResponsableRayon" init-method="init">
+<property name="nom">
+<value>Dupont</value>
+</property>
+<property name="grade">
+<value>B</value>
+</property>
+<property name="rayon">
+<value>Rayon 2</value>
+</property>
+</bean>
+<bean id="gestion1" class="com.formation.spring.GestionAdherent">
+<property name="adherents">
+<list>
+<ref bean="adherent1"/>
+<ref bean="adherent2"/>
+</list>
+</property>
+<property name="responsables">
+<map>
+<entry key="R1">
+<ref bean="responsable1"/>
+</entry>
+<entry key="R2">
+<ref bean="responsable2"/>
+</entry>
+</map>
+</property>
+</bean>
+</beans>
